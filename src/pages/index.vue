@@ -6,6 +6,10 @@ const go = () => {
   if (name)
     router.push(`/hi/${encodeURIComponent(name)}`)
 }
+const handleClickGo = (e: object) => {
+  console.log('handleClickGo e', e)
+  router.push('/todo/list')
+}
 </script>
 
 <template>
@@ -44,6 +48,14 @@ const go = () => {
         @click="go"
       >
         Go
+      </button>
+    </div>
+    <div>
+      <button
+        class="m-3 text-sm btn"
+        @click="handleClickGo"
+      >
+        Go Todos
       </button>
     </div>
   </div>
