@@ -1,19 +1,22 @@
 /*
  * @Author: cest
  * @Date: 2022-08-10 08:58:17
- * @LastEditTime: 2022-08-10 10:58:24
+ * @LastEditTime: 2022-08-10 13:15:54
  * @LastEditors: cest
  * @FilePath: /vue3-vite3-todo-list/src/main.ts
- * @Description: 编辑描述内容
+ * @Description: vue 入口文件
  */
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import routes from 'virtual:generated-pages'
+import { createPinia } from 'pinia'
 import App from './App.vue'
 // Tailwind CSS Preflight
 import '@unocss/reset/tailwind.css'
 // Unocss 高性能且极具灵活性的即时原子化 CSS 引擎
 import 'uno.css'
+// element-plus 主题 暗黑模式
+import 'element-plus/theme-chalk/dark/css-vars.css'
 // 网络字体
 import './assets/fonts/dm/index.css'
 // 主体样式
@@ -26,5 +29,7 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
 })
-app.use(router)
-app.mount('#app')
+app
+  .use(router)
+  .use(createPinia())
+  .mount('#app')
