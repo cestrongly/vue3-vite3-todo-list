@@ -1,9 +1,17 @@
+/*
+ * @Author: cest
+ * @Date: 2022-08-10 08:58:17
+ * @LastEditTime: 2022-08-10 10:01:05
+ * @LastEditors: cest
+ * @FilePath: /vue3-vite3-todo-list/unocss.config.ts
+ * @Description: Unocss 配置文件
+ */
 import {
   defineConfig,
   presetAttributify,
   presetIcons,
   presetUno,
-  presetWebFonts,
+  // presetWebFonts,
   // transformerDirectives,
   // transformerVariantGroup,
 } from 'unocss'
@@ -20,13 +28,14 @@ export default defineConfig({
       scale: 1.2,
       warn: true,
     }),
-    presetWebFonts({
-      fonts: {
-        sans: 'DM Sans',
-        serif: 'DM Serif Display',
-        mono: 'DM Mono',
-      },
-    }),
+    // 预设网络字体
+    // presetWebFonts({
+    //   fonts: {
+    //     sans: 'DM Sans',
+    //     serif: 'DM Serif Display',
+    //     mono: 'DM Mono',
+    //   },
+    // }),
   ],
   // transformers: [
   //   transformerDirectives(),
