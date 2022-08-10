@@ -1,3 +1,11 @@
+<!--
+ * @Author: cest
+ * @Date: 2022-08-10 08:58:17
+ * @LastEditTime: 2022-08-10 10:44:11
+ * @LastEditors: cest
+ * @FilePath: /vue3-vite3-todo-list/README.zh-CN.md
+ * @Description: 编辑描述内容
+-->
 <p align='center'>
   <img src='https://user-images.githubusercontent.com/11247099/111864893-a457fd00-899e-11eb-9f05-f4b88987541d.png' alt='Vitesse - Opinionated Vite Starter Template' width='600'/>
 </p>
@@ -37,6 +45,8 @@
 - 🦾 TypeScript, 当然
 
 - ☁️ 零配置部署 Netlify
+
+- 😊 使用 stylus 
 
 <br>
 
