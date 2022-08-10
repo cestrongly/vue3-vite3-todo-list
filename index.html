@@ -1,5 +1,13 @@
+<!--
+ * @Author: cest
+ * @Date: 2022-08-10 08:58:17
+ * @LastEditTime: 2022-08-10 11:18:21
+ * @LastEditors: cest
+ * @FilePath: /vue3-vite3-todo-list/index.html
+ * @Description: 编辑描述内容
+-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +18,7 @@
 <body class="font-sans dark:text-white dark:bg-hex-121212">
   <div id="app"></div>
   <script>
-    (function() {
+    (function () {
       const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
       const setting = localStorage.getItem('color-schema') || 'auto'
       if (setting === 'dark' || (prefersDark && setting !== 'light'))
