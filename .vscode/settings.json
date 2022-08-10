@@ -3,6 +3,7 @@
     "antfu",
     "Attributify",
     "cest",
+    "degit",
     "iconify",
     "pnpm",
     "styl",
@@ -11,6 +12,7 @@
     "typecheck",
     "unocss",
     "unplugin",
+    "vite",
     "Vitesse",
     "vueuse"
   ],
