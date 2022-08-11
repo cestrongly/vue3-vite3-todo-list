@@ -1,7 +1,7 @@
 /*
  * @Author: cest
  * @Date: 2022-08-10 08:58:17
- * @LastEditTime: 2022-08-10 12:50:13
+ * @LastEditTime: 2022-08-11 11:16:58
  * @LastEditors: cest
  * @FilePath: /vue3-vite3-todo-list/vite.config.ts
  * @Description: 编辑描述内容
@@ -17,8 +17,9 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Unocss from 'unocss/vite'
 
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-
+// const base = import.meta.env.VITE_BASE
 export default defineConfig({
+  base: '/vue3-vite3-todo-list',
   resolve: {
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`,
