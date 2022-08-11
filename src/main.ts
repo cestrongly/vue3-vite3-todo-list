@@ -1,13 +1,13 @@
 /*
  * @Author: cest
  * @Date: 2022-08-10 08:58:17
- * @LastEditTime: 2022-08-11 15:27:20
+ * @LastEditTime: 2022-08-11 17:33:39
  * @LastEditors: cest
  * @FilePath: /vue3-vite3-todo-list/src/main.ts
  * @Description: vue 入口文件
  */
 import { createApp } from 'vue'
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
 import routes from 'virtual:generated-pages'
 import { createPinia } from 'pinia'
 import App from './App.vue'
@@ -26,7 +26,8 @@ import './styles/main.css'
 
 const app = createApp(App)
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  // history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(),
   routes,
 })
 console.log('VITE_BASE:', import.meta)
