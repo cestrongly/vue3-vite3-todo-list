@@ -1,7 +1,7 @@
 <!--
  * @Author: cest
  * @Date: 2022-08-10 08:58:17
- * @LastEditTime: 2022-08-10 15:00:44
+ * @LastEditTime: 2022-08-11 17:16:56
  * @LastEditors: cest
  * @FilePath: /vue3-vite3-todo-list/src/components/Footer.vue
  * @Description: 编辑描述内容
@@ -12,7 +12,7 @@
       icon-btn i-carbon-campsite
       rel="noreferrer"
       href="/"
-      title="GitHub"
+      title="Home"
     />
 
     <button icon-btn @click="toggleDark()">
@@ -22,7 +22,7 @@
     <a
       icon-btn i-carbon-logo-github
       rel="noreferrer"
-      href="https://github.com/antfu/vitesse-lite"
+      href="https://github.com/cestrongly/vue3-vite3-todo-list"
       target="_blank"
       title="GitHub"
     />

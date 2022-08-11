@@ -1,7 +1,7 @@
 /*
  * @Author: cest
  * @Date: 2022-08-10 13:28:37
- * @LastEditTime: 2022-08-11 15:22:34
+ * @LastEditTime: 2022-08-11 16:47:24
  * @LastEditors: cest
  * @FilePath: /vue3-vite3-todo-list/src/store/todo.ts
  * @Description: TodoStore
@@ -22,7 +22,7 @@ export const useTodoStore = defineStore('todo', () => {
     { id: '1638256193996', name: '吃饭', done: false },
   ]
 
-  const DONE_TODO_LIST = ['1638256190206']
+  const DONE_TODO_LIST: Array<String> = ['1638256190206']
 
   const doneTodoList = ref(JSON.parse(JSON.stringify(DONE_TODO_LIST)))
   const todoList = ref(JSON.parse(JSON.stringify(TODO_LIST)))
@@ -55,6 +55,10 @@ export const useTodoStore = defineStore('todo', () => {
     doneTodoList.value.splice(doneTodoList.value.indexOf(id), 1)
   }
 
+  /**
+   * 更新 todo
+   * @param {doneTodoList:Array<Sting>}
+   */
   const update = ({ doneTodoList = [] }) => {
     console.log('update doneTodoList', doneTodoList)
     const store = useTodoStore()
@@ -73,11 +77,55 @@ export const useTodoStore = defineStore('todo', () => {
   const reset = () => {
     const store = useTodoStore()
     store.$patch((state) => {
-      state.doneTodoList = ref(JSON.parse(JSON.stringify(DONE_TODO_LIST)))
+      state.doneTodoList = JSON.parse(JSON.stringify(DONE_TODO_LIST))
       console.log(state.doneTodoList)
       state.todoList = JSON.parse(JSON.stringify(TODO_LIST))
     })
-    console.log('DONE_TODO_LIST', DONE_TODO_LIST)
+    // console.log('DONE_TODO_LIST', DONE_TODO_LIST)
+  }
+
+  /**
+   * 全选
+   * @param checked
+   */
+  const checkAll = (checked: boolean) => {
+    const store = useTodoStore()
+    store.$patch((state) => {
+      state.todoList = Array.from(state.todoList, todo => ({
+        ...<Todo>todo,
+        done: checked,
+      }))
+      state.doneTodoList = checked
+        ? Array.from(state.todoList, todo => (<Todo>todo).id)
+        : Array.from([])
+    })
+  }
+
+  /**
+   * 反选
+   */
+  const reverse = () => {
+    const store = useTodoStore()
+    store.$patch((state) => {
+      state.todoList = state.todoList.map((todo: Todo) => ({
+        ...todo,
+        done: !todo.done,
+      }))
+      state.doneTodoList = state.todoList
+        .filter((todo: Todo) => todo.done === true)
+        .map((todo: Todo) => todo.id)
+    })
+  }
+
+  /**
+   * 清除已完成
+   */
+  const clearAllDone = () => {
+    const store = useTodoStore()
+    store.$patch((state) => {
+      state.todoList = state.todoList.filter((todo: Todo) => !todo.done)
+      state.doneTodoList = Array.from([])
+    })
   }
   return {
     todoList,
@@ -87,6 +135,9 @@ export const useTodoStore = defineStore('todo', () => {
     remove,
     update,
     reset,
+    checkAll,
+    reverse,
+    clearAllDone,
   }
 })
 
