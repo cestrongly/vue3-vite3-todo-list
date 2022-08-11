@@ -1,10 +1,10 @@
 /*
  * @Author: cest
  * @Date: 2022-08-10 13:28:37
- * @LastEditTime: 2022-08-10 17:22:47
+ * @LastEditTime: 2022-08-11 15:22:34
  * @LastEditors: cest
  * @FilePath: /vue3-vite3-todo-list/src/store/todo.ts
- * @Description: 编辑描述内容
+ * @Description: TodoStore
  */
 
 import { acceptHMRUpdate, defineStore } from 'pinia'
